@@ -1,0 +1,255 @@
+/* style.css
+ * This file provides css styles.
+ */
+
+
+body,html {
+	background-color: #3b4b54; width : 100%;	
+	height: 100%;
+	margin: 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #ffffff;
+}
+
+a {
+	text-decoration: none;
+	color: #00aed1;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+.button {
+	font-size: 14px;
+	/*background-color: #00aed1;*/
+	background-color: #00aed1;
+	color:#edf2fy;
+	text-decoration: none;
+	
+}
+.button-blue {
+	font-size: 14px;
+	/*background-color: #00aed1;*/
+	background-color: #00aed1;
+	color:white;
+	text-decoration: none;
+}
+
+
+.newappIcon {
+	padding-top: 10%;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 2em;
+	max-width:200px;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.leftHalf {
+	float: left;
+	width: 25%;
+	height: 100%;
+	margin:0 auto;
+	overflow:auto;
+}
+
+.rightHalf {
+	float: right;
+	width: 75%;
+	background-color: #313f4a;
+	height: 100%;
+	overflow:auto;
+}
+.picdisplay{
+	
+	background-image: url('../images/mystock.png');
+	width: 228px;
+	height: 159px;
+}
+
+.description {
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.blue {
+	color: #00aed1;
+}
+
+
+table {
+	table-layout: fixed;
+	width: 400px;
+	margin: 0 auto;
+	word-wrap: break-word;
+	padding-top:10%;
+}
+.resulttable {
+	table-layout: fixed;
+	width: 800px;
+	margin:0 auto;
+	word-wrap: break-word;
+	padding-top:0;
+}
+form {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+input {
+    width: 100%;
+}
+span {
+    display: block;
+    overflow: hidden;
+    padding-right:10px;
+}
+button {
+    font-size: 14px;
+	/*background-color: #00aed1;*/
+	background-color: #00aed1;
+	color:white;
+	text-decoration: none;
+}
+
+th {
+	border-bottom: 1px solid #000;
+}
+
+th, td {
+	text-align: left;
+	padding: 2px 20px;
+}
+
+.env-var {
+	text-align: right;
+	border-right: 1px solid #000;
+	width: 30%;
+}
+
+pre {
+	padding: 0;
+	margin: 0;
+}
+
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) {
+body,html {
+	background-color: #3b4b54; width : 100%;	
+	height: 100%;
+	margin: 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: white;
+}
+h1 {
+	font-weight: bold;
+	font-size: 8em;
+}
+
+p {
+		font-size: 6em;
+}
+
+.leftHalf {
+	width: 100%;
+	height: 50%;
+}
+.rightHalf {
+
+	width: 100%;
+	background-color: #313f4a;
+	height: 50%;
+	overflow:auto;
+}
+.picdisplay{
+	
+	background-image: url('../images/Tony-Stock-images.png');
+	width: 1200px;
+	height: 800px;
+}
+.resulttable {
+	table-layout: fixed;
+	width: 900px;
+	margin:0 auto;
+	word-wrap: break-word;
+	padding-top:0;
+}
+
+button {
+	font-size: 100px;
+	background-color: #00aed1;
+	height: 300px;
+    width: 900px;	
+	color:white;
+	text-decoration: none;
+}
+}
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+body,html {
+	background-color: #3b4b54; width : 100%;	
+	height: 100%;
+	margin: 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: white;
+}
+h1 {
+	font-weight: bold;
+	font-size: 8em;
+}
+
+p {
+		font-size: 6em;
+}
+
+.leftHalf {
+	width: 100%;
+	height: 50%;
+}
+.rightHalf {
+
+	width: 100%;
+	background-color: #313f4a;
+	height: 50%;
+	overflow:auto;
+}
+.picdisplay{
+	
+	background-image: url('../images/Tony-Stock-images.png');
+	width: 1200px;
+	height: 800px;
+}
+.resulttable {
+	table-layout: fixed;
+	width: 900px;
+	margin:0 auto;
+	word-wrap: break-word;
+	padding-top:0;
+}
+
+button {
+	font-size: 100px;
+	background-color: #00aed1;
+	height: 200px;
+    width: 900px;	
+	color:white;
+	text-decoration: none;
+}
+
+}
+
+

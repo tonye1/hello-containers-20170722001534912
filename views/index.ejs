@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!--edit the title for your own name-->
+    <title>Tony's Mobile-friendly Stock Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  
+  <meta charset="utf-8">
+
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.25">
+
+</head>
+  <body>
+  <header role="banner">
+<h1 role="heading"><a href="/#">IBM Bluemix Garage Architect Workshop Labs</a></h1>
+</header>
+
+<!-- LEFTNAV_BEGIN -->
+<div class="leftHalf" border="1">
+<p >
+ <a href="https://www.ibm.com/" >home</a>
+ </p><p>
+  <a href="https://www.ibm.com/design/" >design</a>
+  <p><img class="picdisplay" align="left"> 
+  </p>
+
+  </div>
+
+<!-- LEFTNAV_END -->
+<div class="rightHalf">
+<script src="../lib/scripts.js"></script>
+<script src="side-nav.js"></script>
+      <form action="./stock" method="get">
+      <p><h1>Tony's Stock Page</h1></p>
+			<p>Click the button below to see the stock page</p>	
+			<p>
+ 				<button align="left">Get My Stock Quote!</button>
+ 			</p>
+ 			<p><br>
+ 			<p>The user count in my nodejs application is: <%= userCount %></p>
+ 		</form>
+  </div>
+  </body>
+</html>
+

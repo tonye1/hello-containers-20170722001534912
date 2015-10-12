@@ -1,0 +1,10 @@
+---
+applications:
+- name: tonynode
+  framework: node
+  runtime: node08
+  memory: 192M
+  instances: 1
+  host: tonynode
+  path: .     
+  command: node app.js
