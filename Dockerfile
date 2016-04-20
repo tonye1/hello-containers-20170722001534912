@@ -1,5 +1,5 @@
 # DevOps Node js Dockerfile
-FROM registry/ng.bluemix.net/tonye
+FROM registry.ng.bluemix.net/tonye
 MAINTAINER Tony Efremenko "tonye1@us.ibm.com"
 
 #Install the applciation
