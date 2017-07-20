@@ -1,13 +1,15 @@
-# DevOps Node js Dockerfile
-FROM registry.ng.bluemix.net/tonye
-MAINTAINER Tony Efremenko "tonye1@us.ibm.com"
+ #This image will be based on the official nodejs docker image
+FROM node:latest
 
-#Install the applciation
-ADD package.json /app/package.json
-RUN cd /app && npm install
-COPY public /app/public
-ENV WEB_PORT 80
-EXPOSE 80
+# Set in what directory commands will run
+WORKDIR /home/app
 
-#define the command to run the application when the container starts
-CMD ["node","/app/appjs"
+# Put all our code inside that directory that lives in the container
+ADD . /home/app
+
+# Install dependencies
+# Tell Docker we are going to use this port
+EXPOSE 3000
+
+# The command to run our app when the container is run
+CMD ["node", "app.js"]
