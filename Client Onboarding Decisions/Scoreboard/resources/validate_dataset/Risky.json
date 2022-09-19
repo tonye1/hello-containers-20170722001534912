@@ -1,0 +1,9 @@
+{
+  "client": {
+    "annualRevenue": 50000000,
+    "numberOfEmployees": 1200,
+    "companyAge": 3,
+    "defaultedPayment": false
+  },
+  "industry": "Federal"
+}

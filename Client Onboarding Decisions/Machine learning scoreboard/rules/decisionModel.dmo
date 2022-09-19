@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><com.ibm.rules.studio.model.decisionmodel:DecisionModel xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore" xmlns:xmi="http://www.omg.org/XMI" xmi:version="2.0">
+  <name>Machine learning scoreboard 1</name>
+  <uuid>e458a92f-35e1-41f3-8d90-95efa48bd8b8</uuid>
+  <locale>en_US</locale>
+  <definition>
+        <definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="Decisions" name="machineLearningScoreboard1" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="input" name="Industry">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="decisions.ads_jam_lab.client_onboarding.data.Industry" collection="false" name="Industry"/>
+            </initialization>
+        </extensionElements>
+        <variable id="input_ii" name="Industry" typeRef="decisions.ads_jam_lab.client_onboarding.data.Industry"/>
+    </inputData>
+    <decision id="input-mapping" name="Input mapping">
+        <description>ML model input</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="decisions.ads_jam_lab.client_onboarding.data.Industry" collection="false" name="Industry"/>
+                <input bomType="decisions.ads_jam_lab.client_onboarding.data.ClientInformation" collection="false" name="Client information"/>
+                <output bomType="cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1.Input" collection="false" name="Input mapping"/>
+                <rule defaultRule="false" href="input-mapping/set%20client%20input.drl" kind="BusinessRule" name="set client input"/>
+                <rule defaultRule="false" href="input-mapping/set%20industry.dmt" kind="DecisionTable" name="set industry"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="input_mapping_ii" name="Input mapping" typeRef="cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1.Input"/>
+        <informationRequirement>
+            <requiredInput href="#input"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="output" name="ML model invocation">
+        <description>ML model output</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1.Input" collection="false" name="Input mapping"/>
+                <output bomType="cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1.Output" collection="false" name="ML model invocation"/>
+                <rule defaultRule="false" href="output%2FdecisionModel.drl" kind="BusinessRule" name="Prediction"/>
+            </ruleset>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.predictionInvocation"><![CDATA[true]]></property>
+            </properties>
+        </extensionElements>
+        <variable id="output_ii" name="ML model invocation" typeRef="cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1.Output"/>
+        <informationRequirement>
+            <requiredInput href="#input-mapping"/>
+        </informationRequirement>
+    </decision>
+    <decision id="output-mapping" name="Output mapping">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="first">
+                <input bomType="cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1.Output" collection="false" name="ML model invocation"/>
+                <output bomType="decisions.ads_jam_lab.client_onboarding.data.Scoreboard" collection="false" name="Output mapping"/>
+                <rule defaultRule="false" href="output-mapping/get%20machine%20learning%20output.drl" kind="BusinessRule" name="get machine learning output"/>
+                <rule defaultRule="false" href="output-mapping/default%20scoreboard.drl" kind="BusinessRule" name="default scoreboard"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="output_mapping_ii" name="Output mapping" typeRef="decisions.ads_jam_lab.client_onboarding.data.Scoreboard"/>
+        <informationRequirement>
+            <requiredInput href="#output"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_1" name="Client information">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="decisions.ads_jam_lab.client_onboarding.data.ClientInformation" collection="false" name="Client information"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_1_ii" name="Client information" typeRef="decisions.ads_jam_lab.client_onboarding.data.ClientInformation"/>
+    </inputData>
+</definitions>
+    </definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

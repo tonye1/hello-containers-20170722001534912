@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>default</name>
+  <uuid>30cab3ca-0f46-4bb4-a24a-7718adde020e</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to a new Scoreboard where
+		the Confidence is 0.68, 
+		High risk is false ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
